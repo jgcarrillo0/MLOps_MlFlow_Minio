@@ -1,0 +1,36 @@
+[project]
+name = "mlops-covertype"
+version = "0.1.0"
+description = "MLOps project for Covertype classification"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "boto3>=1.40.0",
+    "joblib>=1.5.0",
+    "mlflow>=3.0.0",
+    "pandas>=2.2.0",
+    "psycopg[binary]>=3.2.0",
+    "scikit-learn>=1.6.0",
+    "sqlalchemy>=2.0.0",
+]
+
+[dependency-groups]
+api = [
+    "fastapi>=0.118.0",
+    "pydantic-settings>=2.10.0",
+    "uvicorn[standard]>=0.37.0",
+]
+
+jupyter = [
+    "ipykernel>=6.30.0",
+    "jupyterlab>=4.4.0",
+    "matplotlib>=3.10.0",
+]
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
